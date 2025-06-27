@@ -1,0 +1,5 @@
+*.log
+node_modules/
+*.env
+i3_typing_master/
+dist/

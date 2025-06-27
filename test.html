@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/dfb28db673.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body class="flex flex-col bg-gradient-to-r from-black to-gray-900 text-white">
+  <div id="header" class=""></div>
+  <!-- Search bar: permanent, above main -->
+  <section id="search" 
+    class="mt-[200px] opacity-0 scale-95  pointer-events-none transition-all duration-500 ease-in-out flex justify-center flex-col text-white items-center px-4 mb-8">
+    <div class="relative w-full max-w-2xl">
+      <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+        <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
+      </div>
+
+      <input id="searchInput" 
+        oninput="handleSearch()"
+        type="text"
+        placeholder="Search for movies, genres, or actors..."
+        class="w-full pl-12 pr-4 py-3 rounded-full bg-white/5 text-white placeholder:text-gray-400 
+              border border-white/10 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-white/30 
+              focus:border-transparent transition duration-300" />
+
+      <button
+        class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white font-bold 
+              px-5 py-2 rounded-full transition duration-300">
+        Search
+      </button>
+    </div>
+  </section>
+
+  <main id="mainContent" class=" ">
+    <section id="recommendedMovies"></section>
+  </main>
+
+
+  <div id="footer"></div>
+
+  <script src="loadComponent.js"></script>
+  <!-- <script src="main.js"></script> -->
+  <script src="carouselAnimate.js"></script>
+  <script src="main.js"></script>
+  <script src="JS/movies.js"></script>
+  <script>
+//     function loadMyList() {
+//   loadComponent("mainContent", "myList.html", renderMyList);
+// }
+
+    // function loadMovieDetail() {
+    //   loadComponent("mainContent", "movieDetail.html");
+    // }
+
+
+
+    // window.loadMovieDetail = loadMovieDetail;
+  </script>
+</body>
+
+</html>

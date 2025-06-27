@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anime Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=M+PLUS+Rounded+1c:wght@500&display=swap');
+
+    body {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      background-color: #000;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bgZoom {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.05);
+      }
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    .background-zoom {
+      animation: bgZoom 20s ease-in-out infinite alternate;
+    }
+
+    .scanlines::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.03) 0px,
+        transparent 2px,
+        transparent 4px
+      );
+      z-index: 2;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="relative text-white overflow-hidden">
+
+  <!-- Background with zoom animation -->
+  <div class="absolute inset-0 z-0">
+    <img src="/Project_movieMate/img/avatar.png" class="object-cover w-full h-full brightness-[.3] background-zoom" />
+  </div>
+
+  <!-- Optional scanline effect -->
+  <div class="absolute inset-0 scanlines z-10"></div>
+
+  <!-- Login Form -->
+  <div class="relative z-20 flex items-center justify-center min-h-screen px-6">
+    <div class="bg-black/60 border border-white/10 backdrop-blur-md rounded-xl shadow-lg p-8 w-full max-w-md animate-fade-in-up">
+      <h2 class="text-center text-2xl sm:text-3xl font-bold mb-6 tracking-widest text-pink-400 font-['Press Start 2P']">
+        LOGIN
+      </h2>
+
+      <form id="animeLoginForm" class="space-y-6 font-['M PLUS Rounded 1c']">
+        <div>
+          <label class="block text-sm mb-1">Username</label>
+          <input type="text" id="animeUsername" class="w-full px-4 py-2 bg-white/10 text-white rounded border border-white/20 focus:ring-2 focus:ring-pink-400 placeholder-gray-400" placeholder="e.g. Goku" required>
+        </div>
+
+        <div>
+          <label class="block text-sm mb-1">Password</label>
+          <input type="password" id="animePassword" class="w-full px-4 py-2 bg-white/10 text-white rounded border border-white/20 focus:ring-2 focus:ring-pink-400 placeholder-gray-400" placeholder="••••••••" required>
+        </div>
+
+        <button type="submit" class="w-full py-2 bg-pink-600 hover:bg-pink-700 hover:scale-105 transition-all rounded text-white tracking-wider shadow-md">
+          <i class="fa-solid fa-circle-user mr-2"></i> Login
+        </button>
+      </form>
+
+      <p class="text-center text-sm mt-6 text-white/70">
+        Don’t have an account? <a href="#" class="text-pink-400 hover:underline">Register</a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const animeUsers = {
+      "naruto": "hokage",
+      "goku": "kamehameha"
+    };
+
+    document.getElementById("animeLoginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const username = document.getElementById("animeUsername").value.trim();
+      const password = document.getElementById("animePassword").value.trim();
+
+      if (animeUsers[username] && animeUsers[username] === password) {
+        alert("🌸 Welcome, " + username + "!");
+      } else {
+        alert("❌ Incorrect username or password.");
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<section data-movie-container="trending" data-section="trending" id="trendingSection" class="movie-section-container px-16 lg:mx-36 mt-16 lg:px-20">  
+  <div class="flex  flex-col gap-4  justify-center w-full">
+    <div class="flex justify-between items-center w-full ">
+      <h1 class="text-[20px]  sm:text-[26px] font-bold">Trending</h1>
+      <button  onclick="toggleViewMore(this)" class="transition-all duration-300 hover:opacity-80">view all<span><i class="fa-solid fa-arrow-right"></i></span> </button>
+    </div>
+    <div class="flex gap-8 flex-col lg:flex-row items-center  justify-center w-full">
+      <div class="w-[350px] hover:cursor-pointer">
+        <!-- Card -->
+        <div data-trailer="/Project_movieMate/img/Medelin.png"
+            data-genre='["Action", "Comedy"]'
+            data-type="Movie"
+            data-poster="/Project_movieMate/img/medelinPoster.png"
+            data-Title="Medelin"
+            data-year="2021"
+            data-id="tmv001"
+            onclick="viewMovieDetail(this)" class="group relative h-[300px] rounded-xl overflow-hidden shadow-xl bg-cover bg-center transition-transform duration-500 hover:scale-105 hover:brightness-75"
+            style="background-image: url('/Project_movieMate/img/Medelin.png');">
+
+          <!-- Top Info Bar -->
+          <ul class="absolute top-0 left-0 w-full flex justify-between px-4 py-2 text-white bg-gradient-to-b from-black/80 to-transparent text-sm z-10">
+            <li><i class="fa-regular fa-clock mr-1"></i>3:12:00</li>
+            <li><i class="fa-solid fa-star mr-1"></i>8.5</li>
+          </ul>
+
+          <!-- Cool Classic Play Icon -->
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:play-animate">
+            <div class="w-16 h-16 flex items-center justify-center rounded-full bg-white/80 text-black shadow-lg">
+              <i class="fa-solid fa-play text-2xl ml-1"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Info -->
+        <div class="flex justify-between items-center mt-3 px-1">
+          <h3 class="text-lg font-semibold text-white">Medelin</h3>
+          <ul class="flex gap-2 mt-1 text-sm font-medium">
+            <li class="bg-red-600 px-2 py-1 rounded-md text-white">Action</li>
+            <li class="bg-red-600 px-2 py-1 rounded-md text-white">Comedy</li>
+          </ul>
+        </div>
+      </div>
+      <div class="w-[350px]">
+        <!-- Card -->
+        <div class="group relative h-[300px] rounded-xl overflow-hidden shadow-xl bg-cover bg-center transition-transform duration-500 hover:scale-105 hover:brightness-75"
+            style="background-image: url('/Project_movieMate/img/fastx.png');">
+
+          <!-- Top Info Bar -->
+          <ul class="absolute top-0 left-0 w-full flex justify-between px-4 py-2 text-white bg-gradient-to-b from-black/80 to-transparent text-sm z-10">
+            <li><i class="fa-regular fa-clock mr-1"></i>3:12:00</li>
+            <li><i class="fa-solid fa-star mr-1"></i>8.5</li>
+          </ul>
+
+          <!-- Cool Classic Play Icon -->
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:play-animate">
+            <div class="w-16 h-16 flex items-center justify-center rounded-full bg-white/80 text-black shadow-lg">
+              <i class="fa-solid fa-play text-2xl ml-1"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Info -->
+        <div class="flex justify-between items-center mt-3 px-1">
+          <h3 class="text-lg font-semibold text-white">Medelin</h3>
+          <ul class="flex gap-2 mt-1 text-sm font-medium">
+            <li class="bg-red-600 px-2 py-1 rounded-md text-white">Action</li>
+            <li class="bg-red-600 px-2 py-1 rounded-md text-white">Comedy</li>
+          </ul>
+        </div>
+      </div>
+      <div class="w-[350px]">
+        <!-- Card -->
+        <div class="group relative h-[300px] rounded-xl overflow-hidden shadow-xl bg-cover bg-center transition-transform duration-500 hover:scale-105 hover:brightness-75"
+            style="background-image: url('/Project_movieMate/img/the_black.png');">
+
+          <!-- Top Info Bar -->
+          <ul class="absolute top-0 left-0 w-full flex justify-between px-4 py-2 text-white bg-gradient-to-b from-black/80 to-transparent text-sm z-10">
+            <li><i class="fa-regular fa-clock mr-1"></i>3:12:00</li>
+            <li><i class="fa-solid fa-star mr-1"></i>8.5</li>
+          </ul>
+
+          <!-- Cool Classic Play Icon -->
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:play-animate">
+            <div class="w-16 h-16 flex items-center justify-center rounded-full bg-white/80 text-black shadow-lg">
+              <i class="fa-solid fa-play text-2xl ml-1"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Info -->
+        <div class="flex justify-between items-center mt-3 px-1">
+          <h3 class="text-lg font-semibold text-white">Medelin</h3>
+          <ul class="flex gap-2 mt-1 text-sm font-medium">
+            <li class="bg-red-600 px-2 py-1 rounded-md text-white">Action</li>
+            <li class="bg-red-600 px-2 py-1 rounded-md text-white">Comedy</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--Hidden-->
+     <div class="movie-list grid grid-cols-2 md:grid-cols-3 gap-6 mt-4" data-movie-container="trending">
+    <!-- Movie cards go here -->
+  </div>
+   
+  </div>  
+</section>

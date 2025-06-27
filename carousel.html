@@ -1,0 +1,109 @@
+<section id="slider-wrapper" class="relative ">
+
+  <section onclick="viewMovieDetail(this)"
+    data-title="Avatar:The way of the water"
+    data-type="Movie"
+    data-genre='["Action", "Adventure", "Science Fiction"]'
+    data-poster="/Project_movieMate/img/avatar.png"
+    data-trailer="/Project_movieMate/img/avatar.png"
+    data-year="2022"
+    data-id="mv001"
+    data-description="Set more than a decade after the events of the first film, learn the story of the 
+    Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure.
+        "
+    class="movie-slide relative bg-cover bg-center flex items-center px-8 sm:px-16  transition-opacity duration-700 py-40 "
+    style="background-image:url('/Project_movieMate/img/avatar.png');">
+  <!-- Dark Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent"></div>
+  <!-- Content -->
+    <div class="relative z-10 max-w-2xl text-white space-y-6 animate-fade-in">
+    <h1 class="text-2xl sm:text-4xl lg:text-6xl font-bold leading-tight drop-shadow-md ani">Avatar: The Way of Water</h1>
+    <ul class="flex items-center gap-4 text-base text-black font-bold">
+      <li class="bg-white px-2 py-2 rounded-2xl">Action</li>
+        <li class="bg-white px-2 py-2 rounded-2xl">Adventure</li>
+        <li class="bg-white px-2 py-2 rounded-2xl">Science Fiction</li>
+        <li class="text-white font-medium">
+          <i class="fa-solid fa-calendar-days "></i> <span class="text-white">2022</span> </li>
+        <li class="text-white font-medium">
+          <i class="fa-solid fa-clock"></i>
+          <span>3:12:00</span> 
+        </li>
+        <li class="text-white font-medium">
+          <i class="fa-solid fa-star"></i>
+          <span>8.5</span>
+        </li>
+      </ul>
+
+      <p class="text-gray-300 sm:text-lg">Set more than a decade after the events of the first film, learn the story of the 
+        Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure.</p>
+
+      <!-- Action Buttons -->
+      <div class="flex gap-4 pt-4">
+        <button onclick="loadMovieDetail()" class="bg-white text-black font-semibold px-6 py-3 rounded-md hover:bg-gray-200 transition-all duration-300 shadow-md">
+          <i class="fa-solid fa-play mr-2"></i> Watch Now
+        </button>
+        <button onclick="event.stopPropagation(); addToMyList()" class="bg-white/20 border border-white text-white px-6 py-3 rounded-md hover:bg-white/30 transition-all duration-300">
+          <i class="fa-solid fa-clock mr-2"></i> Watch Later
+        </button>
+      </div>
+    </div>
+  </section>
+  <section  onclick="viewMovieDetail(this)"
+    data-title="Interstellar"
+    data-type="movie"
+    data-genre='["Adventure", "Sci Fi"]'
+    data-poster="/Project_movieMate/img/InterstellarPoster.jpg"
+    data-trailer="/Project_movieMate/img/interstellar.jpg"
+    data-year="2016"
+    data-id="mv002"
+    data-description="Set more than a decade after the events of the first film, learn the story of the 
+        Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure.
+        "
+    class="movie-slide relative bg-cover bg-center flex items-center px-8 sm:px-16 transition-opacity duration-700 py-40"
+    style="background-image:url('/Project_movieMate/img/interstellarPoster.jpeg');">
+  <!-- Dark Gradient Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent"></div>
+  <!-- Content -->
+  <div class="relative z-10 max-w-2xl text-white space-y-6 animate-fade-in">
+    <h1 class="text-2xl sm:text-4xl lg:text-6xl font-bold leading-tight drop-shadow-md ani">Interstellar</h1>
+    <ul class="flex items-center gap-4 text-base text-black font-bold">
+      <li class="bg-white px-2 py-2 rounded-2xl">Action</li>
+      <li class="bg-white px-2 py-2 rounded-2xl">Adventure</li>
+      <li class="bg-white px-2 py-2 rounded-2xl">Science Fiction</li>
+      <li class="text-white font-medium">
+        <i class="fa-solid fa-calendar-days "></i> <span class="text-white">2022</span> </li>
+      <li class="text-white font-medium">
+        <i class="fa-solid fa-clock"></i>
+        <span>3:12:00</span> 
+      </li>
+      <li class="text-white font-medium">
+        <i class="fa-solid fa-star"></i>
+        <span>8.5</span>
+      </li>
+    </ul>
+    <p  class="text-gray-300 sm:text-lg">Set more than a decade after the events of the first film, learn the story of the 
+      Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure.</p>
+
+    <!-- Action Buttons -->
+    <div class="flex gap-4 pt-4">
+      <button class="bg-white text-black font-semibold px-6 py-3 rounded-md hover:bg-gray-200 transition-all duration-300 shadow-md">
+        <i class="fa-solid fa-play mr-2"></i> Watch Now
+      </button>
+      <button onclick="event.stopPropagation(); addToMyList()" class="bg-white/20 border border-white text-white px-6 py-3 rounded-md hover:bg-white/30 transition-all duration-300">
+        <i class="fa-solid fa-clock mr-2"></i> Watch Later
+      </button>
+    </div>
+  </section>
+
+  <div id="dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+<!-- Dots will be added by JavaScript -->
+    
+
+  </div>
+  <button id="prevBtn" class="absolute top-1/2 left-4 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full hover:bg-black transition">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
+  <button id="nextBtn" class="absolute top-1/2 right-4 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full hover:bg-black transition">
+    <i class="fa-solid fa-chevron-right"></i>
+  </button>
+</section>
