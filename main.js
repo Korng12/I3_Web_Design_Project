@@ -1,4 +1,33 @@
+function toggleSubMenu(id) {
+  const submenu = document.getElementById(id);
+  const isHidden = submenu.classList.contains("hidden");
+  
+  // Close all submenus first (optional, if you want only one open at a time)
+  document.querySelectorAll("#mobile-menu ul").forEach(ul => {
+    if (ul !== submenu) ul.classList.add("hidden");
+  });
 
+  submenu.classList.toggle("hidden");
+
+  // Rotate the chevron icon
+  const toggleIconId = id === "genreSubmenu" ? "genreToggleIcon" : "exploreToggleIcon";
+  const icon = document.getElementById(toggleIconId);
+
+  if (isHidden) {
+    icon.classList.add("rotate-180");
+  } else {
+    icon.classList.remove("rotate-180");
+  }
+}
+
+
+function viewMoreRecently(){
+  const viewMoreBtn = document.getElementById("viewMoreRecently");
+  const hiddenRecently = document.getElementById("hiddenRecently");
+  hiddenRecently.classList.toggle("hidden");
+  viewMoreBtn.innerHTML = hiddenRecently.classList.contains("hidden") ? '<i class="fa-solid fa-chevron-up"></i>' : '<i class="fa-solid fa-chevron-down"></i>';
+  viewMoreBtn.classList.toggle("rotate-180");
+}
 function mobileMenuShow(){
   const menuToggle = document.getElementById('menu');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -399,8 +428,8 @@ function loadMyList() {
   container.appendChild(wrapper);
 }
 
-let exploreFullList = [];  // Store the full filtered list globally
-let isShowingAll = false;  // Toggle state
+let exploreFullList = [];  
+let isShowingAll = false; 
 
 function filterExplore(type) {
   const container = document.getElementById("mainContent");
@@ -489,64 +518,17 @@ function renderExploreMovies() {
   container.appendChild(btnWrapper);
 }
 
-// function renderRecommended(moviesList) {
-//   const section = document.getElementById("recommendedSection");
-//   section.innerHTML = ""; // clear previous
-
-//   const wrapper = document.createElement("div");
-//   wrapper.className = "flex flex-col gap-8 lg:mx-36 lg:px-20 px-6 py-10";
-
-//   const header = `
-//     <div class="flex justify-between">
-//       <div class="flex gap-2 lg:gap-8">
-//         <h1 class="text-[20px] sm:text-[26px] font-bold">Recommended</h1>
-//         <button class="filterBtn" data-filter="movie">Movies</button>
-//         <button class="filterBtn" data-filter="series">Series</button>
-//         <button class="filterBtn" data-filter="animation">Animation</button>
-//       </div>
-//       <button onclick="toggleViewMore()" class="text-white/80 hover:text-white hover:underline">View More <i class="fa-solid fa-arrow-right ml-1"></i></button>
-//     </div>
-//   `;
-
-//   wrapper.innerHTML = header;
-
-//   const cardsContainer = document.createElement("div");
-//   cardsContainer.className = "flex items-center justify-center gap-8 w-full flex-wrap";
-
-//   moviesList.forEach(movie => {
-//     const card = document.createElement("div");
-//     card.className = "flex flex-col gap-4";
-//     card.innerHTML = `
-//       <div onclick="viewMovieDetail(this)" data-title="${movie.title}" data-type="${movie.type}" data-trailer="${movie.trailer}" data-poster="${movie.poster}" data-genre='${JSON.stringify(movie.genre)}' data-description="${movie.description}" data-seasons='${JSON.stringify(movie.seasons)}' class="relative bg-cover h-[350px] w-[250px] shadow-lg overflow-hidden bg-center hover:cursor-pointer shadow-lg transition-transform duration-500 hover:scale-105 hover:brightness-75 overflow-hidden bg-center" style="background-image: url('${movie.poster}');"></div>
-//       <div class="flex justify-between items-center">
-//         <h3>${movie.title}</h3>
-//         <ul class="flex gap-2">
-//           <li class="bg-red-600 p-1 rounded-md">HD</li>
-//           <li class="border-2 border-red-500 rounded-md p-1"><i class="fa-regular fa-clock mr-2"></i><span>${movie.duration}</span></li>
-//         </ul>
-//       </div>
-//     `;
-//     cardsContainer.appendChild(card);
-//   });
-
-//   wrapper.appendChild(cardsContainer);
-//   section.appendChild(wrapper);
-//   section.classList.remove("hidden");
-// }
-
-
-
-let currentFilter = "movie"; // Default
+let currentFilter = "movie"; 
 
 function renderRecommended() {
   const section = document.getElementById("recommendedSection");
   section.innerHTML = "";
 
   const wrapper = document.createElement("div");
-  wrapper.className = "flex flex-col gap-8 lg:mx-36 lg:px-20 px-6 py-10";
+  wrapper.className = "flex flex-col gap-8 lg:mx-36 lg:px-20  py-10";
 
   const header = `
-    <div class="flex justify-between">
+    <div class="flex justify-between items-center">
       <div class="flex gap-2 lg:gap-8">
         <h1 class="text-[20px] sm:text-[26px] font-bold">Recommended</h1>
         <button class="filterBtn ${currentFilter === "movie" ? "bg-red-600 text-white font-bold" : "text-white/80"} border-red-600 border-2 p-2 rounded-xl transition-all duration-300" data-filter="movie">Movies</button>
@@ -562,7 +544,6 @@ function renderRecommended() {
   const cardsContainer = document.createElement("div");
   cardsContainer.className = "flex items-center justify-center gap-8 w-full flex-wrap";
 
-  // ✅ Filter movies based on currentFilter
   const filteredMovies = movies.filter(m => m.type === currentFilter);
 
   filteredMovies.forEach(movie => {
@@ -603,12 +584,11 @@ function renderRecommended() {
   section.appendChild(wrapper);
   section.classList.remove("hidden");
 
-  // ✅ Re-attach filter button listeners
   const filterButtons = wrapper.querySelectorAll(".filterBtn");
   filterButtons.forEach(btn => {
     btn.addEventListener("click", () => {
       currentFilter = btn.dataset.filter;
-      renderRecommended(); // re-render with updated filter
+      renderRecommended();
     });
   });
 }
